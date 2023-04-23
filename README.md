@@ -10,3 +10,7 @@ It uses SQLite3 for indexing translation folders and elements result in an overw
 
 * Windows x86: [sso-lang-editor-ui-x86.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-ui-x86.zip)
 * Windows x64: [sso-lang-editor-ui-x64.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-ui-x64.zip)
+
+## Beta
+
+This is actually at beta stage, so make sure to do a **backup** of your lang files before using it!
