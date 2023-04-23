@@ -1,0 +1,4 @@
+C:\Users\emanu\source\repos\sso-lang-editor-ui\bin\Release\net6.0-windows\publish\win-x64\sso-lang-editor-ui.pdb
+C:\Users\emanu\source\repos\sso-lang-editor-ui\bin\Release\net6.0-windows\publish\win-x64\sni.dll
+C:\Users\emanu\source\repos\sso-lang-editor-ui\bin\Release\net6.0-windows\publish\win-x64\SQLite.Interop.dll
+C:\Users\emanu\source\repos\sso-lang-editor-ui\bin\Release\net6.0-windows\publish\win-x64\sso-lang-editor-ui.exe
