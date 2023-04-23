@@ -1,6 +1,6 @@
 # sso-lang-editor-ui
 
-**sso-lang-editor-ui** is an Open Source editor to handle with Saint Seiya Online translation files. It supports most versions of `lang_data.data` and currently only available for Windows.
+**sso-lang-editor-ui** is an Open Source editor to handle Saint Seiya Online translation files. It supports most versions of `lang_data.data` and currently only available for Windows.
 
 It uses SQLite3 for indexing translation folders and elements result in an overwall performance when searching.
 
