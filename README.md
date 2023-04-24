@@ -12,8 +12,8 @@ It uses SQLite3 for indexing translation folders and elements resulting in an ov
 
 ## Download
 
-* Windows x86: [sso-lang-editor-ui-x86.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-ui-x86.zip)
-* Windows x64: [sso-lang-editor-ui-x64.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-ui-x64.zip)
+* Windows x86: [sso-lang-editor-ui-x86.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-win-x86.zip)
+* Windows x64: [sso-lang-editor-ui-x64.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-win-x64.zip)
 
 ## Beta
 
