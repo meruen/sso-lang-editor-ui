@@ -68,6 +68,11 @@ namespace sso_lang_editor_ui {
 
             for (var folderIndex = 0; folderIndex < lang.foldersCount; folderIndex++) { 
                 var folderName = lang.folderKeys[folderIndex];
+
+                if (!lang.folders.ContainsKey(folderName)) {
+                    lang.folders[folderName] = new List<Lang.Element>();
+                }
+
                 var folder = lang.folders[folderName];
 
                 parent.setStatusText($"Indexing {folderName}");
