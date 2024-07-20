@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|c:\\users\\emanu\\projects\\sso-lang-editor-ui\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|solutionrelative:fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|solutionrelative:fmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\lang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|solutionrelative:lang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56D5A9CA-782A-4F56-915C-EE27148CC341}|sso-lang-editor-ui.csproj|solutionrelative:data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fMain.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\fMain.cs",
+              "RelativeDocumentMoniker": "fMain.cs",
+              "ToolTip": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\fMain.cs [Projeto]",
+              "RelativeToolTip": "fMain.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-14T15:05:57.623Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fMain.cs",
+              "DocumentMoniker": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\fMain.cs",
+              "RelativeDocumentMoniker": "fMain.cs",
+              "ToolTip": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\fMain.cs",
+              "RelativeToolTip": "fMain.cs",
+              "ViewState": "AQIAAEUBAAAAAAAAAAAAAFwBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T23:31:32.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\Data.cs",
+              "RelativeDocumentMoniker": "Data.cs",
+              "ToolTip": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\Data.cs",
+              "RelativeToolTip": "Data.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAMwGUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T22:16:17.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Lang.cs",
+              "DocumentMoniker": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\Lang.cs",
+              "RelativeDocumentMoniker": "Lang.cs",
+              "ToolTip": "C:\\Users\\emanu\\projects\\sso-lang-editor-ui\\Lang.cs",
+              "RelativeToolTip": "Lang.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwEYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T22:16:17.436Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

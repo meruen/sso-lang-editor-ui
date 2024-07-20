@@ -18,7 +18,7 @@ namespace sso_lang_editor_ui {
             currentPage = 0;
             totalPages = 0;
             searchStr = "";
-            
+
             data = new Data();
 
             if (File.Exists(Data.DB_NAME)) {
@@ -43,7 +43,7 @@ namespace sso_lang_editor_ui {
                 totalPages = 0;
                 updateTotalPages();
                 disableNavigation();
-                
+
                 if (lang.loadFromFile(openDialog.FileName)) {
                     data.createTables(lang, this);
                     loadFoldersFromDb();
@@ -117,7 +117,7 @@ namespace sso_lang_editor_ui {
             disableNavigation();
 
             var selectedFolder = foldersList.SelectedItem.ToString();
-            
+
             dataGrid.Rows.Clear();
 
             SQLiteCommand command;
@@ -125,7 +125,7 @@ namespace sso_lang_editor_ui {
 
             countAllCommand = new SQLiteCommand("SELECT folder_id, COUNT(*) FROM elements WHERE 1=1", data.connection);
 
-            if (selectedFolder == "(ALL)") {                
+            if (selectedFolder == "(ALL)") {
                 command = new SQLiteCommand("SELECT * FROM elements WHERE 1=1", data.connection);
             } else {
                 command = new SQLiteCommand("SELECT * FROM elements WHERE folder_id = @folderId", data.connection);
@@ -133,8 +133,8 @@ namespace sso_lang_editor_ui {
             }
 
             if (searchStr.Length > 0) {
-                command.CommandText += " AND LOWER(translated || original) LIKE '%' || @searchStr || '%'";
-                countAllCommand.CommandText += " AND LOWER(translated || original) LIKE '%' || @searchStr || '%'";
+                command.CommandText += " AND LOWER(translated || original || key) LIKE '%' || @searchStr || '%'";
+                countAllCommand.CommandText += " AND LOWER(translated || original || key) LIKE '%' || @searchStr || '%'";
                 command.Parameters.AddWithValue("@searchStr", searchStr.ToLower());
                 countAllCommand.Parameters.AddWithValue("@searchStr", searchStr.ToLower());
             }
@@ -143,7 +143,7 @@ namespace sso_lang_editor_ui {
 
             countAllCommand.CommandText += " GROUP BY folder_id";
             var countsReader = countAllCommand.ExecuteReader();
-            
+
             while (countsReader.Read()) {
                 var folderId = countsReader.GetInt32(0);
                 var count = countsReader.GetInt32(1);
@@ -166,24 +166,27 @@ namespace sso_lang_editor_ui {
             command.CommandText += " LIMIT @limit OFFSET @offset";
             command.Parameters.AddWithValue("@limit", PAGE_LIMIT);
             command.Parameters.AddWithValue("@offset", PAGE_LIMIT * currentPage);
-            
+
             var reader = command.ExecuteReader();
             var elementIdIndex = reader.GetOrdinal("id");
+            var keyIndex = reader.GetOrdinal("key");
             var originalIndex = reader.GetOrdinal("original");
             var translatedIndex = reader.GetOrdinal("translated");
             var folderIdIndex = reader.GetOrdinal("folder_id");
 
             while (reader.Read()) {
                 var elementId = reader.GetInt32(elementIdIndex);
+                var key = reader.GetString(keyIndex);
                 var original = reader.GetString(originalIndex);
                 var translated = reader.GetString(translatedIndex);
                 var folderId = reader.GetInt32(folderIdIndex);
 
-                dataGrid.Rows.Add(new String[] { 
+                dataGrid.Rows.Add(new String[] {
+                    @key,
                     @original,
-                    @translated, 
+                    @translated,
                     elementId.ToString(),
-                    folderId.ToString() 
+                    folderId.ToString()
                 });
             }
 
@@ -201,7 +204,7 @@ namespace sso_lang_editor_ui {
             btFirst.Enabled = false;
             Application.DoEvents();
         }
-        
+
         public void enableNavigation() {
             btNext.Enabled = currentPage < totalPages - 1;
             btLast.Enabled = btNext.Enabled;
@@ -221,16 +224,32 @@ namespace sso_lang_editor_ui {
         }
 
         private void dataGrid_CellEndEdit(object sender, DataGridViewCellEventArgs e) {
-            if (e.ColumnIndex == 1) {
+            if (e.ColumnIndex == 2) {
                 var translated = Convert.ToString(dataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
                 var newTranslated = Convert.ToString(dataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
                 var idValue = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["idColumn"].Value);
-                
+
                 var folderId = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["folderIdColumn"].Value);
 
                 if (newTranslated.Length > 0) {
                     var command = new SQLiteCommand("UPDATE elements SET translated = @translated WHERE id = @elementId AND folder_id = @folderId", data.connection);
                     command.Parameters.AddWithValue("@translated", newTranslated);
+                    command.Parameters.AddWithValue("@elementId", idValue);
+                    command.Parameters.AddWithValue("@folderId", folderId);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            if (e.ColumnIndex == 0) {
+                var key = Convert.ToString(dataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue);
+                var newKey = Convert.ToString(dataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                var idValue = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["idColumn"].Value);
+
+                var folderId = Convert.ToInt32(dataGrid.Rows[e.RowIndex].Cells["folderIdColumn"].Value);
+
+                if (newKey.Length > 0) {
+                    var command = new SQLiteCommand("UPDATE elements SET key = @key WHERE id = @elementId AND folder_id = @folderId", data.connection);
+                    command.Parameters.AddWithValue("@key", newKey);
                     command.Parameters.AddWithValue("@elementId", idValue);
                     command.Parameters.AddWithValue("@folderId", folderId);
                     command.ExecuteNonQuery();
@@ -257,10 +276,7 @@ namespace sso_lang_editor_ui {
         }
 
         private void inputSearch_Click(object sender, EventArgs e) {
-            if (inputSearch.SelectionLength == 0) {
-                inputSearch.SelectAll();
-            }
-            
+
         }
 
         private void menuOpen_Click(object sender, EventArgs e) {
@@ -306,6 +322,28 @@ namespace sso_lang_editor_ui {
 
         private void databaseToolStripMenuItem_Click(object sender, EventArgs e) {
 
+        }
+
+        private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
+
+        private void fMain_Load(object sender, EventArgs e) {
+
+        }
+
+        private void menuSave_Click(object sender, EventArgs e) {
+            var saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "SSO Lang Data (*.data)|*.data";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK) {
+                lang = new Lang(this);
+                lang.loadFromDb(data);
+                lang.saveToFile(saveDialog.FileName);
+            }
+        }
+
+        private void inputSearch_MouseDown(object sender, MouseEventArgs e) {
         }
     }
 }

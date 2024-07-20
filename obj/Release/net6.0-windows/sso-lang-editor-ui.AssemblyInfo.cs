@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sso-lang-editor-ui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7e03a57bfbdee93d1d6038f851d9a5d73ab6740")]
 [assembly: System.Reflection.AssemblyProductAttribute("sso-lang-editor-ui")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sso-lang-editor-ui")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

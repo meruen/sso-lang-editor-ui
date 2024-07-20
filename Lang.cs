@@ -67,6 +67,10 @@ namespace sso_lang_editor_ui {
                 parent.setStatusText($"Writing folder {folderName}");
 
                 for (var elementIndex = 0; elementIndex < folder.Count; elementIndex++) {
+                    if (folderName == "data_text") {
+                        int b = 3;
+                    }
+
                     var element = folder[elementIndex];
 
                     var keyBytes = Encoding.UTF8.GetBytes(element.key);
