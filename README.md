@@ -4,7 +4,7 @@
 
 It uses SQLite3 for indexing translation folders and elements resulting in an overwall performance when searching.
 
-![image](https://user-images.githubusercontent.com/9257067/233847646-c283f1df-7477-4721-8747-b2428230c208.png)
+![image](https://github.com/user-attachments/assets/65aac6ad-78b7-4477-96b2-937f1dca37a8)
 
 ## Requirements
 
@@ -12,9 +12,11 @@ It uses SQLite3 for indexing translation folders and elements resulting in an ov
 
 ## Download
 
+**This versions are old and if you want to get a fully updated version, you must compile the source or wait for a release!**
+
 * Windows x86: [sso-lang-editor-ui-x86.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-win-x86.zip)
 * Windows x64: [sso-lang-editor-ui-x64.zip](https://github.com/meruen/sso-lang-editor-ui/blob/master/bin/Release/net6.0-windows/publish/sso-lang-editor-win-x64.zip)
 
-## Beta
+## Warning
 
-This is actually at beta stage, so make sure to do a **backup** of your lang files before using it!
+Make sure to do a **backup** of your lang files before using it!
